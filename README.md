@@ -1,4 +1,6 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/1bevi2xiu6lagibl/branch/main?svg=true)](https://ci.appveyor.com/project/marinaustinovich/ahj-homeworks-dom-moving-element/branch/main)
 
+deployment: https://marinaustinovich.github.io/ahj-homeworks-dom-Moving-Element/
 
 ### Перемещение элемента
 
