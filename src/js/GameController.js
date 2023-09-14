@@ -11,7 +11,6 @@ export default class GameController {
   }
 
   init() {
-    // TODO: add event listeners to gamePlay events
     this.events();
     this.gamePlay.drawUi('prairie');
     this.showCharacter();
@@ -43,18 +42,10 @@ export default class GameController {
 
   showCharacter() {
     const timerId = setInterval(() => {
-      let position;
-      let isPosition = false;
-      do {
-        position = createPosition(this.gamePlay.boardSize);
-        if (this.gamePlay.positionChar === position) {
-          position = createPosition(this.gamePlay.boardSize);
-          isPosition = true;
-        }
-        this.gamePlay.positionChar = position;
-      } while (!isPosition);
+      const position = createPosition(this.gamePlay.boardSize);
       this.gamePlay.redrawPositions(position);
     }, 1000);
+
     setTimeout(() => clearInterval(timerId), 1000000);
   }
 }

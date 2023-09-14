@@ -1,30 +1,16 @@
 export default function calcTileType(index, boardSize) {
-  // TODO: ваш код будет тут
-  if (index < (boardSize - 1) && index > 0) {
-    return 'top';
-  }
-  if (index < (boardSize ** 2 - 1) && index > (boardSize ** 2 - boardSize)) {
-    return 'bottom';
-  }
-  for (let i = 1; i < boardSize - 1; i += 1) {
-    if (index === boardSize * i) {
-      return 'left';
-    }
-    if (index === (boardSize * i + (boardSize - 1))) {
-      return 'right';
-    }
-  }
+  const isTopRow = index < boardSize;
+  const isBottomRow = index >= boardSize * (boardSize - 1);
+  const isLeftColumn = index % boardSize === 0;
+  const isRightColumn = (index + 1) % boardSize === 0;
 
-  switch (index) {
-    case 0:
-      return 'top-left';
-    case (boardSize - 1):
-      return 'top-right';
-    case (boardSize * (boardSize - 1)):
-      return 'bottom-left';
-    case (boardSize ** 2 - 1):
-      return 'bottom-right';
-    default:
-      return 'center';
-  }
+  if (isTopRow && isLeftColumn) return 'top-left';
+  if (isTopRow && isRightColumn) return 'top-right';
+  if (isBottomRow && isLeftColumn) return 'bottom-left';
+  if (isBottomRow && isRightColumn) return 'bottom-right';
+  if (isTopRow) return 'top';
+  if (isBottomRow) return 'bottom';
+  if (isLeftColumn) return 'left';
+  if (isRightColumn) return 'right';
+  return 'center';
 }

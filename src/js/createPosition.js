@@ -1,14 +1,20 @@
-function creatArrayPositions(boardSize) {
-  const cells = [];
-  for (let i = 0; i < boardSize ** 2; i += 8) {
-    cells.push(i);
-    cells.push(i + 1);
-  }
-  return cells;
+let lastPosition = null;
+
+function createArrayPositions(boardSize) {
+  const totalCells = boardSize ** 2;
+  return Array.from({ length: totalCells / 8 }, (_, i) => i * 8).flatMap(
+    (cell) => [cell, cell + 1],
+  );
 }
 
 export default function createPosition(boardSize) {
-  const cells = creatArrayPositions(boardSize);
-  const rand = Math.floor(Math.random() * cells.length);
-  return cells[rand];
+  const cells = createArrayPositions(boardSize);
+  let rand;
+
+  do {
+    rand = Math.floor(Math.random() * cells.length);
+  } while (cells[rand] === lastPosition);
+
+  lastPosition = cells[rand];
+  return lastPosition;
 }

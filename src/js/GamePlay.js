@@ -94,10 +94,6 @@ export default class GamePlay {
       .filter((o) => o.startsWith('selected')));
   }
 
-  showCellTooltip(message, index) {
-    this.cells[index].title = message;
-  }
-
   hideCellTooltip(index) {
     this.cells[index].title = '';
   }
