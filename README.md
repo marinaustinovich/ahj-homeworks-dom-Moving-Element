@@ -7,7 +7,7 @@ deployment: https://marinaustinovich.github.io/ahj-homeworks-dom-Moving-Element/
 
 Игра на подобие игры, где гномы или другие существа выскакивают из отверстий, и по ним нужно бить молотком:
 
-![](./pic/GracefulMiniatureBustard-small.gif)
+![](./src/img/GracefulMiniatureBustard-small.gif)
 
 Copyright gfycat.com
 
@@ -20,7 +20,7 @@ Copyright gfycat.com
 
 Для картинки персонажа используете следующая:
 
-![](./pic/goblin.png)
+![](./src/img/goblin.png)
 
 
 Всё собирается через Webpack, включая картинки и стили, и выкладывается на GitHub Pages через CI.
